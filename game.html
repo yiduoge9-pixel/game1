@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CensHERship Lab — Game</title>
+  <link rel="stylesheet" href="style4.css" />
+</head>
+<body data-page="game">
+  <header class="header">
+    <div class="wrap top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">
+          <h1>Choose the word most likely to be censored</h1>
+        </div>
+      </div>
+
+      <div class="right">
+        <nav class="nav">
+          <a class="chip" href="index.html">Intro</a>
+          <a class="chip active" href="game.html">Game</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section style="margin-top:22px">
+      <div class="card game-card">
+        <div class="progress-wrap">
+          <div class="progress-bar">
+            <i id="progressFill"></i>
+          </div>
+        </div>
+
+        <div class="game-top">
+          <div class="speech-bubble no-mascot" id="questionBox">
+            Which of the following word is most likely to be censored?
+          </div>
+        </div>
+
+        <div id="optionBoard" class="option-grid">
+          <button class="option-btn" data-index="0">Option 1</button>
+          <button class="option-btn" data-index="1">Option 2</button>
+          <button class="option-btn" data-index="2">Option 3</button>
+          <button class="option-btn" data-index="3">Option 4</button>
+        </div>
+
+        <div class="actions">
+          <button id="submitAnswerBtn">Submit</button>
+        </div>
+
+        <div class="result-box">
+          <div class="result-line">
+            Result: <b id="visLabel">—</b>
+          </div>
+
+          <div class="small mt8" id="reasonBox"></div>
+
+          <div class="next-wrap">
+            <button class="ghost" id="nextQuestionBtn">Next set</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="congratsModal" class="modal-overlay">
+      <div class="modal-card">
+        <h2>Congrats!</h2>
+        <p>You completed the censorship challenge.</p>
+        <p class="small">
+          You’ve seen how certain women’s health words are more likely to be flagged or suppressed.
+        </p>
+
+        <div class="modal-actions">
+          <button id="restartGameBtn">Play again</button>
+          <button class="ghost" id="closeCongratsBtn">Close</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

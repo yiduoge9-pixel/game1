@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>CensHERship Lab — Game Intro</title>
+  <link rel="stylesheet" href="style4.css" />
+
+  <style>
+    /* =========================================================
+       Intro page mobile one-screen fix
+       This style only affects intro.html
+       Desktop keeps the full introduction.
+       Mobile shows a compact intro with Start button visible.
+       ========================================================= */
+
+    .mobile-summary{
+      display:none;
+    }
+
+    @media (max-width: 640px){
+
+      html,
+      body{
+        width:100%;
+        min-height:100%;
+        overflow-x:hidden;
+      }
+
+      body[data-page="intro"]{
+        min-height:100svh;
+      }
+
+      body[data-page="intro"] .header{
+        padding:8px 0;
+      }
+
+      body[data-page="intro"] .wrap{
+        width:calc(100% - 18px);
+        margin:0 auto;
+      }
+
+      body[data-page="intro"] .top{
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        gap:8px;
+      }
+
+      body[data-page="intro"] .brand{
+        gap:8px;
+      }
+
+      body[data-page="intro"] .logo{
+        width:38px;
+        height:38px;
+        border-radius:11px;
+      }
+
+      body[data-page="intro"] .title h1{
+        font-size:21px;
+        line-height:1.05;
+        margin:0 0 2px;
+      }
+
+      body[data-page="intro"] .title p{
+        font-size:16px;
+        line-height:1.05;
+        margin:0;
+      }
+
+      body[data-page="intro"] .right{
+        display:none;
+      }
+
+      body[data-page="intro"] main.wrap{
+        width:calc(100% - 14px);
+      }
+
+      body[data-page="intro"] .intro-section{
+        margin-top:8px;
+        margin-bottom:0;
+      }
+
+      body[data-page="intro"] .intro-card{
+        min-height:calc(100svh - 82px);
+        max-height:calc(100svh - 82px);
+        overflow:hidden;
+        padding:18px 18px 16px;
+        border-radius:24px;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+      }
+
+      body[data-page="intro"] .intro-badge{
+        width:100%;
+        text-align:center;
+        padding:8px 12px;
+        margin-bottom:14px;
+        font-size:15px;
+        line-height:1;
+      }
+
+      body[data-page="intro"] .intro-title{
+        font-size:32px;
+        line-height:1.08;
+        margin:0 0 14px;
+        letter-spacing:-0.5px;
+      }
+
+      body[data-page="intro"] .intro-lead{
+        font-size:18px;
+        line-height:1.42;
+        margin:0 0 16px;
+        color:#74484d;
+      }
+
+      body[data-page="intro"] .intro-grid,
+      body[data-page="intro"] .intro-note{
+        display:none;
+      }
+
+      body[data-page="intro"] .mobile-summary{
+        display:block;
+        background:#fff;
+        border:1px solid #edd6d8;
+        border-radius:20px;
+        padding:14px 16px;
+        margin:0 0 16px;
+      }
+
+      body[data-page="intro"] .mobile-summary h3{
+        margin:0 0 8px;
+        font-size:21px;
+        line-height:1.15;
+        color:#5a2d33;
+      }
+
+      body[data-page="intro"] .mobile-summary p{
+        margin:0;
+        font-size:15px;
+        line-height:1.38;
+        color:#7a5559;
+      }
+
+      body[data-page="intro"] .intro-actions{
+        margin-top:auto;
+      }
+
+      body[data-page="intro"] .start-btn{
+        width:100%;
+        min-height:56px;
+        padding:14px 20px;
+        border-radius:20px;
+        font-size:21px;
+      }
+    }
+
+    @media (max-width: 390px){
+
+      body[data-page="intro"] .intro-card{
+        min-height:calc(100svh - 78px);
+        max-height:calc(100svh - 78px);
+        padding:15px 15px 14px;
+      }
+
+      body[data-page="intro"] .title h1{
+        font-size:19px;
+      }
+
+      body[data-page="intro"] .title p{
+        font-size:15px;
+      }
+
+      body[data-page="intro"] .intro-title{
+        font-size:28px;
+        line-height:1.08;
+        margin-bottom:12px;
+      }
+
+      body[data-page="intro"] .intro-lead{
+        font-size:16px;
+        line-height:1.34;
+        margin-bottom:12px;
+      }
+
+      body[data-page="intro"] .mobile-summary{
+        padding:12px 14px;
+        margin-bottom:12px;
+      }
+
+      body[data-page="intro"] .mobile-summary h3{
+        font-size:19px;
+      }
+
+      body[data-page="intro"] .mobile-summary p{
+        font-size:14px;
+        line-height:1.3;
+      }
+
+      body[data-page="intro"] .start-btn{
+        min-height:52px;
+        font-size:19px;
+      }
+    }
+
+    @media (max-height: 700px) and (max-width: 640px){
+
+      body[data-page="intro"] .intro-title{
+        font-size:26px;
+        margin-bottom:10px;
+      }
+
+      body[data-page="intro"] .intro-lead{
+        font-size:15px;
+        line-height:1.3;
+        margin-bottom:10px;
+      }
+
+      body[data-page="intro"] .mobile-summary{
+        padding:11px 13px;
+        margin-bottom:10px;
+      }
+
+      body[data-page="intro"] .mobile-summary h3{
+        font-size:18px;
+        margin-bottom:6px;
+      }
+
+      body[data-page="intro"] .mobile-summary p{
+        font-size:13px;
+        line-height:1.28;
+      }
+
+      body[data-page="intro"] .start-btn{
+        min-height:50px;
+        font-size:18px;
+      }
+    }
+  </style>
+</head>
+
+<body data-page="intro">
+  <header class="header">
+    <div class="wrap top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">
+          <h1>CensHERship Lab</h1>
+          <p>Game introduction</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <nav class="nav">
+          <a class="chip active" href="intro.html">Intro</a>
+          <a class="chip" href="game.html">Game</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro-section">
+      <div class="card intro-card">
+        <div class="intro-badge">Interactive experience</div>
+
+        <h2 class="intro-title">Choose the word most likely to be censored</h2>
+
+        <p class="intro-lead">
+          This mini game invites players to reflect on how women’s health language is often treated
+          differently on digital platforms.
+        </p>
+
+        <div class="mobile-summary">
+          <h3>How it works</h3>
+          <p>
+            You will see four words in each round. Choose the word most likely to be flagged,
+            suppressed, or treated as “sensitive”. Then submit your answer to reveal the result.
+          </p>
+        </div>
+
+        <div class="intro-grid">
+          <div class="intro-block">
+            <h3>What is this game about?</h3>
+            <p>
+              You will see four words in each round. Your task is to choose the one that is most
+              likely to be flagged, suppressed, or treated as “sensitive” by moderation systems.
+            </p>
+          </div>
+
+          <div class="intro-block">
+            <h3>How to play</h3>
+            <ul class="intro-list">
+              <li>Read the four options carefully.</li>
+              <li>Select the word you think is most likely to be censored.</li>
+              <li>Click <b>Submit</b> to see whether your choice is correct.</li>
+              <li>Continue until you finish all question sets.</li>
+            </ul>
+          </div>
+
+          <div class="intro-block">
+            <h3>Why does it matter?</h3>
+            <p>
+              Many words related to women’s health, anatomy, reproduction, and care are unfairly
+              moderated online. This shapes what people can say, learn, and share.
+            </p>
+          </div>
+
+          <div class="intro-block">
+            <h3>What you will discover</h3>
+            <p>
+              By playing, you will notice that perfectly normal educational or medical terms can be
+              treated as risky content. The game turns that invisible filtering into something visible.
+            </p>
+          </div>
+        </div>
+
+        <div class="intro-note">
+          <p>
+            This experience is designed as a quick awareness activity. It does not represent a real
+            platform moderation model, but helps illustrate common patterns of suppression.
+          </p>
+        </div>
+
+        <div class="intro-actions">
+          <a class="start-btn" href="game.html">Start the game</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
